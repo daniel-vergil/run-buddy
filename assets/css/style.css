@@ -5,9 +5,6 @@
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   padding: 20px 35px;
   background-color: #39a6b2;
 }
@@ -17,6 +14,7 @@ header h1 {
   font-size: 36px;
   color: yellow;
   margin: 0;
+  display: inline;
 }
 
 header a {
@@ -25,21 +23,18 @@ header a {
 }
 
 header nav {
+  float: right;
   margin: 7px 0;
 }
 
-header nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
+header nav ul li {
+  display: inline;
 }
 
 header nav ul li a {
-  margin: 0 30px;
+  padding: 10px 15px;
   font-weight: lighter;
-  font-size: 1.55vw;
+  font-size: 22px;
 }
 
 body {
@@ -49,21 +44,20 @@ body {
 }
 
 footer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   background: #fce138;
   width: 100%;
   padding: 40px 35px;
 }
 
 footer h2 {
+  display: inline;
   color: #024e76;
   font-size: 30px;
   margin: 0;
 }
 
 footer div {
+  float: right;
   line-height: 1.5;
   text-align: right;
 }
@@ -77,21 +71,23 @@ section {
 }
 
 .hero {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   background-image: url("../images/hero-bg.jpeg");
+  height: 600px;
   background-size: cover;
   background-position: center;
+  position: relative;
+  align-items: flex-start;
 }
 
 .hero-form {
-  width: 40%;
-  margin: 3.5%;
   background-color: #fce138;
   padding: 20px;
+  width: 500px;
   color: #024e76;
   border: solid 3px #024e76;
+  position: absolute;
+  bottom: 120px;
+  right: 140px;
 }
 
 .hero-form h3 {
@@ -101,21 +97,6 @@ section {
 
 .hero-form p {
   margin: 5px 0 15px 0;
-}
-
-.hero-cta {
-  width: 35%;
-  text-align: right;
-  margin: 3.5%;
-  color: #fff;
-  font-size: 18px;
-  line-height: 1.3;
-}
-
-.hero-cta h2 {
-  font-style: italic;
-  font-size: 55px;
-  color: #fce138;
 }
 
 .form-input {
@@ -140,8 +121,15 @@ section {
   font-size: 16px;
 }
 
-.intro p {
+.hero-cta {
+  line-height: 1.2;
+}
+
+.intro {
   text-align: center;
+}
+
+.intro p {
   line-height: 1.7;
   color: #39a6b2;
   width: 80%;
@@ -150,16 +138,16 @@ section {
 }
 
 .steps {
+  text-align: center;
   background: #fce138;
 }
 
 .section-title {
-  padding-bottom: 20px;
-  text-align: center;
-  margin: 0 auto 35px auto;
-  width: 50%;
-  font-size: 55px;
+  font-size: 48px;
+  display: inline-block;
+  padding: 0 100px 20px 100px;
   border-bottom: 3px solid;
+  margin-bottom: 35px;
   color: #024e76;
 }
 
@@ -171,76 +159,51 @@ section {
   border-color: #39a6b2;
 }
 
-.step {
-  margin: 50px auto;
-  padding-bottom: 50px;
-  width: 80%;
-  border-bottom: 1px solid #39a6b2;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+.steps div {
+  margin-bottom: 80px;
 }
 
-.step h3 {
-  flex: 1 30%;
+.steps img {
+  width: 15%;
+  margin: 10px 0;
+}
+
+.steps h3 {
   color: #024e76;
   font-size: 46px;
+  margin-top: 10px;
 }
 
-.step-text p {
+.steps p {
   color: #39a6b2;
-  font-size: 18px;
+  font-size: 23px;
 }
 
-.step-text h4 {
-  font-size: 26px;
-  line-height: 1.5;
-  color: #024e76;
-}
-
-.step-info {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  flex: 2 70%;
-}
-
-.step-img {
-  flex: 1 12%;
-  margin-right: 20px;
-}
-
-.step-text {
-  flex: 12;
-}
-
-.step-img img {
-  max-width: 100%;
+.steps span {
+  font-size: 38px;
 }
 
 .trainers {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  text-align: center;
 }
 
 .trainer {
-  margin: 20px;
+  width: 900px;
+  margin: 0 auto 30px auto;
   background: #024e76;
   color: #fce138;
-  flex: 1;
+  overflow: auto;
 }
 
 .trainer img {
-  width: 100%;
+  width: 35%;
+  float: left;
 }
 
 .trainer-bio {
-  padding: 25px;
-  line-height: 1.3;
+  padding: 35px;
+  float: left;
+  width: 65%;
 }
 
 .text-left {
@@ -252,21 +215,23 @@ section {
 }
 
 .trainer-bio h3 {
-  font-size: 28px;
+  font-size: 32px;
+  margin-bottom: 8px;
 }
 
 .trainer-bio h4 {
   font-weight: lighter;
-  font-size: 22px;
-  margin-bottom: 15px;
+  font-size: 26px;
+  margin-bottom: 25px;
 }
 
 .trainer-bio p {
   font-size: 17px;
-
+  line-height: 1.3;
 }
 
 .contact {
+  text-align: center;
   background: #024e76;
 }
 
@@ -274,22 +239,17 @@ section {
   color: #fce138;
 }
 
-.contact-info {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.contact-info>* {
-  flex: 1;
-  margin: 15px;
-}
-
 .contact-info iframe {
+  width: 400px;
   height: 400px;
 }
 
 .contact-info div {
+  width: 410px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  margin: 30px 0 0 60px;
   color: white;
 }
 
@@ -302,36 +262,18 @@ section {
 .contact-info address {
   margin: 20px 0;
   line-height: 1.5;
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
-}
-
-.contact-form input,
-.contact-form textarea {
-  border: 1px solid #024e76;
-  display: block;
-  padding: 7px 15px;
-  font-size: 16px;
-  color: #024e76;
-  width: 100%;
-  margin-bottom: 15px;
-  margin-top: 5px;
-}
-
-.contact-form button {
-  width: 100%;
-  border: none;
-  background: #fce138;
-  color: #024e76;
-  text-align: center;
-  padding: 15px 0;
-  font-size: 16px;
 }
 
 .contact-info a {
   color: #fce138;
 }
 
-.flex-row {
-  display: flex;
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+  header h1 a {
+    /* this will be applied on any screen smaller than 980px */
+    color: tomato;
+  }
 }
